@@ -9,10 +9,27 @@
     float: left;
 }
 
-.grey {
-    background-color: grey;
+.red {
+    background-color: red;
 }
 
-.player {
-    background-color: red;
+.blue {
+    background-color: blue;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+
+.purple {
+    background-color: purple;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.green {
+    background-color: green;
 }

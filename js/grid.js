@@ -1,17 +1,17 @@
 // GRID FUNCTIONS
 
-function createGridArray() {
+function createEmptyArray() {
     // Create and return a grid array
-    return [ [0, 0, 0, 1, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 1, 1, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 1, 0, 1, 0, 0, 0, 0], 
-             [0, 0, 0, 1, 0, 0, 1, 0, 0, 0], 
-             [0, 0, 0, 1, 0, 0, 0, 1, 0, 0], 
-             [0, 0, 0, 1, 0, 0, 0, 0, 1, 0], 
-             [0, 0, 0, 1, 1, 1, 1, 1, 1, 1], 
-             [0, 0, 0, 1, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 1, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 1, 0, 0, 0, 0, 0, 0] ];
+    return [ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] ];
 }
 
 function createDivGrid(grid) {
@@ -24,10 +24,18 @@ function createDivGrid(grid) {
             divEl.id = "cell" + row  +  "-" + col;
 
             // Add appropriate class to each div element
-            if (grid[row][col] === 1) {
-                divEl.classList.add("grey");
+            if (grid[row][col] === 0) {
+                divEl.classList.add("red");
+            } else if (grid[row][col] === 1) {
+                divEl.classList.add("orange");
             } else if (grid[row][col] === 2) {
-                divEl.classList.add("player");
+                divEl.classList.add("yellow");
+            } else if (grid[row][col] === 3) {
+                divEl.classList.add("green");
+            } else if (grid[row][col] === 4) {
+                divEl.classList.add("blue");
+            } else if (grid[row][col] === 5) {
+                divEl.classList.add("purple");
             }
 
             // Add dataset values for row and col
@@ -63,4 +71,12 @@ function cellClicked(e) {
         grid[row][col] = 1;
     }
 
+}
+
+function randomizeArray(grid) {
+    for (let row = 0; row < NUM_ROWS; row++) {
+        for (let col = 0; col < NUM_COLS; col++) {
+            grid[row][col] = randomInt(0, 6);
+        }
+    }
 }
