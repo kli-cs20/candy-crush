@@ -52,24 +52,13 @@ function createDivGrid(grid) {
 }
 
 function cellClicked(e) {
-    // console.log(e.target);
-    // Set color of the clicked cell
-
-    // Get value of color select element
-    let color = document.getElementById("cell-color").value;
-
     // Get row and col of the clicked cell
     let row = e.target.dataset.row;
     let col = e.target.dataset.col;
 
-    // Update clicked cell based on color selection
-    e.target.classList = ""; // Clear class list of cell
-    grid[row][col] = 0; // Set grid to "white";
+    console.log("clicked")
 
-    if (color === "grey") {
-        e.target.classList.add("grey");
-        grid[row][col] = 1;
-    }
+    grid[row][col] = 5;
 
 }
 
